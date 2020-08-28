@@ -198,14 +198,14 @@ namespace LiveReloadServer
                 });
             }
 
-            //if (!string.IsNullOrEmpty(ServerConfig.FolderNotFoundFallbackPath))
-            //{
-            //    app.UseEndpoints(endpoints =>
-            //    {
-            //        endpoints.MapFallbackToFile("/index.html");
-            //    });
-            //}
-            //app.Use(FallbackMiddlewareHandler);
+            if (!string.IsNullOrEmpty(ServerConfig.FolderNotFoundFallbackPath))
+            {
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapFallbackToFile("/index.html");
+                });
+            }
+            app.Use(FallbackMiddlewareHandler);
 
 
             string headerLine = new string('-', Helpers.AppHeader.Length);
