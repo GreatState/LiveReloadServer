@@ -9,7 +9,7 @@
     <DefineConstants>USE_RAZORPAGES;BUILD_EXE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;USE_RAZORPAGES</DefineConstants>
+    <DefineConstants>TRACE;BUILD_EXE</DefineConstants>
   </PropertyGroup>
 
 
@@ -44,6 +44,7 @@
     <PackageIcon>icon.png</PackageIcon>    
     <NoWarn>1591</NoWarn>
     <ApplicationIcon>LiveReload.ico</ApplicationIcon>
+    <StartupObject>LiveReloadServer.Program</StartupObject>
   </PropertyGroup>
 
   <!-- Build NuGet Tool Package -->
@@ -66,6 +67,7 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.7" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.3.8" />
     <PackageReference Include="Westwind.AspNetCore.LiveReload" Version="0.2.5" />
     <PackageReference Include="Westwind.Utilities" Version="3.0.41" />
